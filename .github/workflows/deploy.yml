@@ -1,0 +1,31 @@
+name: Build and Test Next.js App
+
+on:
+  push:
+    branches:
+      - main   # Trigger on pushes to the main branch
+  pull_request:
+    branches:
+      - main   # Trigger on PRs targeting the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use Ubuntu to run the build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.x'  # Specify the Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the app
+        run: npm run build
+
+    #   - name: Run tests
+    #     run: npm run test  # Optional, only if you have tests set up
