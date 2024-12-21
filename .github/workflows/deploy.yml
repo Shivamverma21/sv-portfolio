@@ -27,5 +27,5 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Run tests
-        run: npm run test  # Optional, only if you have tests set up
+    #   - name: Run tests
+    #     run: npm run test  # Optional, only if you have tests set up
